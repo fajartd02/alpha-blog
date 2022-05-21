@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params.require(:article).permit(:title, :description, :theme)) # strong params
     # render plain: @article.inspect -> Cara Debug
     if @article.save
+      flash[:notice] = "Article was created successfully"
       # redirect_to article_path(@article) # Auto Extract the id
       redirect_to @article # Shortcut for the above code
     else
