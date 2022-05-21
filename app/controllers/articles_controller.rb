@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
     @article = Article.new  # Supaya gak dapet errors karena errors.any di views
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     # render plain: params[:article] -> Cara Debug
     @article = Article.new(params.require(:article).permit(:title, :description, :theme)) # strong params
@@ -22,5 +26,9 @@ class ArticlesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def update
+  
   end
 end
