@@ -16,7 +16,8 @@
       <td><%= article.title%></td>
       <td><%= article.description %></td>
       <td><%= article.theme %></td>
-      <td>Placeholder</td>
+      <td><%= button_to 'Delete', article_path(article), method: :delete %></td> 
+      <%# Rails 7 harus pake button ga bsa Link %>
     </tr>
   <% end %>
   </tbody>
