@@ -6,7 +6,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Theme</th>
-      <th>Action</th>
+      <th colspan="3">Action</th>
     </tr>
   </thead>
 
@@ -18,9 +18,13 @@
       <td><%= article.theme %></td>
       <td><%= link_to 'Show', article_path(article) %></td> 
       <td><%= link_to 'Edit', edit_article_path(article) %></td> 
-      <td><%= button_to 'Delete', article_path(article), method: :delete %></td> 
+      <td><%= button_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td> 
       <%# Rails 7 harus pake button ga bsa Link %>
     </tr>
   <% end %>
   </tbody>
 </table>
+
+<p>
+<%= link_to 'Create new Article', new_article_path %>
+</p>
