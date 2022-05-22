@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     # render plain: params[:article] -> Cara Debug
-    @article = Article.new(params.require(:article).permit(:title, :description, :theme)) # strong params
+    @article = Article.new(article_params) # strong params
     # render plain: @article.inspect -> Cara Debug
     if @article.save
       flash[:notice] = "Article was created successfully"
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if @article.update(params.require(:article).permit(:title, :description, :theme))
+    if @article.update(article_params)
       flash[:notice] = "Article was updated succesfully"
       redirect_to @article
     else
@@ -46,6 +46,10 @@ class ArticlesController < ApplicationController
   
   def set_article
     @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :description, :theme)
   end
 
 end
