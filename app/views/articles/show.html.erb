@@ -1,6 +1,7 @@
 <h1>Showing Article Details</h1>
 <h1><%= @article.title %></h1>
 <h1><%= @article.description %></h1>
+<h1><%= @article.theme %></h1>
 <%= link_to 'Edit', edit_article_path(@article) %>
 <%= button_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
 <%= link_to 'Return to article listing', articles_path %>
