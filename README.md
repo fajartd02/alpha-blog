@@ -1,6 +1,11 @@
-# README
+## Deployment
+[Apps Deploy Here](https://fajar-alpha-blog-7.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
+## Techstack
+- Ruby
+- Ruby on rails 7
+
+<!-- This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
@@ -21,4 +26,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* ... -->
