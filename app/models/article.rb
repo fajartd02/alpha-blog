@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  belongs_to :user
 # mode kosong ini berfungsi untuk
 # komunikasi dengan table dan ngasih getter dan setter
  

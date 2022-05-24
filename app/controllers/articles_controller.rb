@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article] -> Cara Debug
     @article = Article.new(article_params) # strong params
+    @article.user = User.first
     # render plain: @article.inspect -> Cara Debug
     if @article.save
       flash[:notice] = "Article was created successfully"
